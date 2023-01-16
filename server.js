@@ -1,3 +1,16 @@
+/*********************************************************************************
+*  WEB422 – Assignment 1
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: ____joshua wong__________________ Student ID:111578209  ______________ Date: ________________January 15, 2023
+*  Cyclic Link: https://blue-fragile-salmon.cyclic.app/_________________________
+*
+********************************************************************************/ 
+
+
+
 const exp = require("express");
 //const bodyparser = require("body-parser");
 const app = exp();
@@ -69,6 +82,11 @@ app.get("/api/movies",function(req,res){
        // console.log(value);
     res.json(value);
     
+}).catch((err)=>{
+    res.json({"message": err});
+
+    console.log(err);
+    //res.end();
 });
 
 

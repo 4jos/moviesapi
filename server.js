@@ -4,8 +4,8 @@
 *  No part of this assignment has been copied manually or electronically from any other source
 *  (including web sites) or distributed to other students.
 * 
-*  Name: ____joshua wong__________________ Student ID:111578209  ______________ Date: ________________January 15, 2023
-*  Cyclic Link: https://blue-fragile-salmon.cyclic.app/_________________________
+*  Name: ____Joshua Wong Student ID:111578209   Date:January 15, 2023
+*  Cyclic Link: https://blue-fragile-salmon.cyclic.app/
 *
 ********************************************************************************/ 
 
@@ -47,9 +47,28 @@ db.initialize(process.env.MONGODB_CONN_STRING).then(()=>{
 
 app.get("/",function(req,res){
 
-    res.json({message: "API Listening"});
+  //  res.json({message: "API Listening"});
+    res.sendFile('index.html', {root: __dirname });
+
 
 });
+app.get("/main.css",function(req,res){
+
+    //  res.json({message: "API Listening"});
+      res.sendFile('css/main.css', {root: __dirname });
+  
+  
+  });
+
+
+ /* app.get("/main.js",function(req,res){
+
+    //  res.json({message: "API Listening"});
+      res.sendFile('css/main.css', {root: __dirname });
+  
+  
+  });*/
+
 
 app.post("/api/movies",function(req,res){
 

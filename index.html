@@ -207,8 +207,8 @@ if(title){
 
             let searchform = document.getElementById("searchForm");
             
-            searchform.addEventListener("submit", function(){
-
+            searchform.addEventListener("submit", function(event){
+              event.preventDefault();
 
               let input = searchform.querySelector("input").value;
 

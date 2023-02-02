@@ -150,11 +150,11 @@ fetch(`./api/movies/${id}`)
 
     let titleUrl = "";
 if(title){
-
+console.log(title);
   titleUrl = "&title=" + title;
+title.preventDefault();
 
 }
-
     fetch(`./api/movies?page=${page}&perPage=10` + titleUrl)
    .then(data => data.json()).then(function (data) {
 			
@@ -185,7 +185,6 @@ if(title){
 
 
             document.querySelector("#current-page > a").innerHTML = page;
-          
           }
 
 

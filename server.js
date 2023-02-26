@@ -35,8 +35,8 @@ const MoviesDB = require("./modules/moviesDB.js");
 const db = new MoviesDB();
 console.log(process.env.MONGODB_CONN_STRING);
 db.initialize(process.env.MONGODB_CONN_STRING).then(()=>{
-    app.listen(port+1, ()=>{
-        console.log(`server listening on: ${port+1}`);
+    app.listen(port, ()=>{
+        console.log(`server listening on: http://localhost:${port}/`);
     });
 
    
@@ -94,7 +94,11 @@ app.get("/api/movies",function(req,res){
     const perPage = req.query.perPage;
     const title = req.query.title;
 
+if (title==null){
 
+    res.json({"message": err});
+
+}
     //res.json(allm);
      db.getAllMovies(req.query.page, req.query.perPage, req.query.title).then(function (value) { 
         
@@ -189,5 +193,5 @@ db.deleteMovieById(id).then(function (value) {
 
 });
 
-app.listen(port);
+//app.listen(port);
 

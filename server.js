@@ -96,7 +96,7 @@ app.get("/api/movies",function(req,res){
 
 if (title==null){
 
-    res.json({"message": "error"});
+    res.json({});
 
 }
     //res.json(allm);
